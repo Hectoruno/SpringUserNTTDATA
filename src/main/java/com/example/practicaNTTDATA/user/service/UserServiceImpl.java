@@ -14,6 +14,13 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public User createUser(User user) {
+		if (user.getName()==null && user.getBirthDate() == null){
+            throw new IllegalArgumentException("Necesitas introducir nombre y fecha de nacimiento");
+        }else if (user.getName()==null) {
+            throw new IllegalArgumentException("Debes introducir el nombre");
+        } else if (user.getBirthDate() == null){
+            throw new IllegalArgumentException("Debes introducir la fecha de nacimiento");
+        }
 		return userRepo.save(user);
 				
 	}

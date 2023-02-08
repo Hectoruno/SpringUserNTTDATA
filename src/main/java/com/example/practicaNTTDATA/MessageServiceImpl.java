@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MessageServiceImpl implements MessageService{
 
-	@Value("${course.message}")
+	//@Value("${course.message}")
 	private String message;
 	
 	@Override
